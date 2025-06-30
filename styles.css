@@ -1,40 +1,46 @@
-/* Body styling to center everything on the viewport */
+/* Make the entire page use full viewport height and center everything vertically and horizontally */
 body {
   margin: 0;
-  height: 100vh;
+  height: 100vh; /* full viewport height */
   background-color: #222;
   font-family: Arial, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
 }
 
-/* Container for all content, stacked vertically and centered */
+/* Container stacks header, grid, status, and button vertically centered */
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px; /* space between grid, message, and restart button */
+  gap: 20px; /* space between elements */
+  max-width: 600px; /* optional, limit maximum width for better layout */
 }
 
-/* Styling for the game grid container */
+/* Heading styles (no change) */
+h1 {
+  margin: 0; /* optional, remove default margin if needed */
+  font-size: 24px;
+  color: #fff;
+}
+
+/* Smaller grid of boxes */
 #game-buttons {
   display: grid;
-  grid-template-columns: repeat(3, 150px);
-  gap: 15px;
-  /* Optional: add shadow and border for a premium look */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  grid-template-columns: repeat(3, 100px); /* smaller size */
+  gap: 10px; /* slightly smaller gap */
   padding: 10px;
-  border-radius: 10px;
   background-color: #333;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
-/* Style each button (cell) for large size and clarity */
+/* Style each button for smaller size and bigger text */
 button {
-  width: 150px;
-  height: 150px;
-  font-size: 64px; /* size of X/O text */
+  width: 100px;        /* smaller width */
+  height: 100px;       /* smaller height */
+  font-size: 48px;    /* bigger than before but still fit well */
   border: 2px solid #fff;
   border-radius: 8px;
   background-color: #444;
@@ -54,17 +60,18 @@ button:hover {
 button:disabled {
   background-color: #222;
   cursor: not-allowed;
-  opacity: 0.7; /* visually indicate disabled state */
+  opacity: 0.7;
 }
 
-/* Status message styling below the grid */
+/* Status message below the grid */
 #status {
   font-size: 20px;
   color: #fff;
   margin-top: 20px;
+  text-align: center;
 }
 
-/* Restart button styling, same size as grid buttons for visual harmony */
+/* Restart button, same size and style as boxes, below status */
 #restart {
   padding: 12px 24px;
   font-size: 20px;
