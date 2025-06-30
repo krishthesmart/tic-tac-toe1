@@ -4,59 +4,71 @@ body {
   font-family: Arial, sans-serif;
   height: 100vh;
   display: flex;
-  justify-content: center;   /* horizontally center content */
-  align-items: center;       /* vertically center content */
-  flex-direction: column;    /* stack children vertically */
+  justify-content: center;   /* horizontally center all content */
+  align-items: center;       /* vertically center all content */
+  text-align: center;
 }
 
+/* Container for all content, stacking vertically */
 .container {
   display: flex;
   flex-direction: column;
-  align-items: center;        /* center children horizontally */
+  align-items: center;        /* centers the grid and button horizontally */
+  gap: 20px;                /* space between grid and button & status */
 }
 
-/* Make your grid of 9 buttons larger and centered (keep your existing styles) */
+/* Grid layout for 3x3 buttons, larger size for boxes */
 #game-buttons {
   display: grid;
   grid-template-columns: repeat(3, 150px);
-  gap: 15px;
-  margin-top: 20px;
+  gap: 15px;  /* space between cells */
 }
 
-/* Style your buttons (cells) */
+/* Style each cell/button for bigger appearance */
 button {
-  width: 150px;        
-  height: 150px;      
-  font-size: 64px;    
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
+  width: 150px;
+  height: 150px;
+  font-size: 64px;   /* Adjust large for visual clarity */
   border: 2px solid #fff;
   background-color: #444;
   border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
   transition: background-color 0.2s, transform 0.2s;
 }
+
 button:hover {
   background-color: #555;
   transform: scale(1.05);
 }
+
 button:disabled {
   background-color: #555;
-  cursor: default;
+  cursor: not-allowed;
 }
 
-/* Status message below grid */
+/* Status message below the grid and button */
 #status {
   font-size: 20px;
+  color: #fff;
   margin-top: 20px;
 }
 
-/* Restart button styles */
+/* Restart button style */
 #restart {
-  margin-top: 20px;
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  background-color: #555;
+  color: #fff;
+  transition: background-color 0.2s;
+}
+
+#restart:hover {
+  background-color: #777;
 }
